@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    text-align: center;
+}
+
+.clock-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.clock-toggle {
+    margin-bottom: 20px;
+}
+
+.toggle-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.digital-clock {
+    color: white;
+}
+
+.time-display {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.separator {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.3; }
+}
+
+.ampm {
+    font-size: 2rem;
+    margin-left: 10px;
+}
+
+.date-display {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.analog-clock {
+    width: 300px;
+    height: 300px;
+    position: relative;
+}
+
+.clock-face {
+    width: 100%;
+    height: 100%;
+    border: 8px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.hour-markers {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.marker {
+    position: absolute;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.marker-12 {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.marker-3 {
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.marker-6 {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.marker-9 {
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hour-hand, .minute-hand, .second-hand {
+    position: absolute;
+    background: white;
+    transform-origin: bottom center;
+    left: 50%;
+    border-radius: 5px;
+}
+
+.hour-hand {
+    width: 4px;
+    height: 80px;
+    top: 70px;
+    margin-left: -2px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.minute-hand {
+    width: 3px;
+    height: 110px;
+    top: 40px;
+    margin-left: -1.5px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.second-hand {
+    width: 1px;
+    height: 120px;
+    top: 30px;
+    margin-left: -0.5px;
+    background: #ff4757;
+    transition: transform 0.1s ease-out;
+}
+
+.center-dot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.hidden {
+    display: none;
+}
+
+.timezone-selector {
+    margin-top: 20px;
+}
+
+.timezone-selector label {
+    color: white;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.timezone-selector select {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.timezone-selector select option {
+    background: #333;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 20px;
+    }
+    
+    .time-display {
+        font-size: 2.5rem;
+    }
+    
+    .analog-clock {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .ampm {
+        font-size: 1.5rem;
+    }
+}
