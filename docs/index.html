@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Clock App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="clock-wrapper">
+            <div class="clock-toggle">
+                <button id="toggleMode" class="toggle-btn">Analog</button>
+            </div>
+            
+            <div id="digitalClock" class="digital-clock">
+                <div class="time-display">
+                    <span id="hours">00</span>
+                    <span class="separator">:</span>
+                    <span id="minutes">00</span>
+                    <span class="separator">:</span>
+                    <span id="seconds">00</span>
+                    <span id="ampm" class="ampm">AM</span>
+                </div>
+                <div class="date-display">
+                    <span id="date"></span>
+                </div>
+            </div>
+
+            <div id="analogClock" class="analog-clock hidden">
+                <div class="clock-face">
+                    <div class="hour-hand" id="hourHand"></div>
+                    <div class="minute-hand" id="minuteHand"></div>
+                    <div class="second-hand" id="secondHand"></div>
+                    <div class="center-dot"></div>
+                    
+                    <div class="hour-markers">
+                        <div class="marker marker-12">12</div>
+                        <div class="marker marker-3">3</div>
+                        <div class="marker marker-6">6</div>
+                        <div class="marker marker-9">9</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timezone-selector">
+                <label for="timezone">Timezone:</label>
+                <select id="timezone">
+                    <option value="local">Local Time</option>
+                    <option value="UTC">UTC</option>
+                    <option value="America/New_York">New York</option>
+                    <option value="America/Los_Angeles">Los Angeles</option>
+                    <option value="Europe/London">London</option>
+                    <option value="Europe/Paris">Paris</option>
+                    <option value="Asia/Tokyo">Tokyo</option>
+                    <option value="Asia/Shanghai">Shanghai</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
